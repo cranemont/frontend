@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 214px minmax(344px, auto) minmax(400px, auto);
+      grid-template-rows: 214px minmax(344px, auto) minmax(400px, auto);
+}
+
+.header {
+  margin: 0px auto;
+  width: 100%;
+  background-color: green;
+}
+
+.header__top {
+  margin: 0px auto;
+  width: 1130px;
+  height: 160px;
+  background-color: aquamarine;
+}
+
+.header__nav {
+  margin: 0px auto;
+  width: 1130px;
+  height: 52px;
+  background-color: aliceblue;
+}
+
+.main {
+  margin: 0px auto;
+  width: 1130px;
+  background-color: aqua;
+}
+/*# sourceMappingURL=main.css.map */

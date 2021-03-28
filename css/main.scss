@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+$base-width: 1130px;
+
+.container {
+    display: grid;
+    grid-template-rows: 214px minmax(344px, auto) minmax(400px, auto);
+}
+
+.header {
+    margin: 0px auto;
+    width: 100%;
+    // width: $base-width;
+    background-color: green;
+    &__top {
+        margin: 0px auto;
+        width: $base-width;
+        height: 160px;
+        background-color: aquamarine;
+    }
+    &__nav {
+        margin: 0px auto;
+        width: $base-width;
+        height: 52px;
+        background-color: aliceblue;
+    }
+}
+
+.main {
+    margin: 0px auto;
+    width: $base-width;
+    background-color: aqua;
+}
+
