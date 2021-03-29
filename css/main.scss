@@ -4,11 +4,11 @@ body {
     border: 0;
 }
 
-$base-width: 1280px;
+$base-width: 1380px;
 $max-width: 1920px;
 $header-height: 234px;
 $top-height: 180px;
-$body-margin: 16px;
+$body-margin: 32px;
 
 @mixin flex-column-center {
     display: flex;
@@ -38,20 +38,20 @@ $nav-border: 2px;
     height: $header-height;
     // background-image: ;
     // width: $base-width;
-    background-image: url('/src/img/background-top-side.jpg');
-    background-color: white;
+    background-image: url("../src/img/cloud.jpg");
+    // background-color: white;
     background-attachment: fixed;
     opacity: 0.8;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    // background-size: $base-width+400px $header-height;
+    background-size: $base-width+400px $header-height;
     
 
-    img {
-        opacity: 0.5;
-        background-attachment: fixed;
-    }
+    // img {
+    //     opacity: 0.5;
+    //     background-attachment: fixed;
+    // }
 
     &__top {
         margin: 0px auto;
@@ -88,11 +88,11 @@ $nav-border: 2px;
         }
 
         &--item{
-            
+            font-weight: bold;
             flex-grow: 1;
             text-align: center;
             &:nth-child(1){
-                min-width: 280px;
+                min-width: 360px;
             }
             
             @for $i from 2 to 6{
@@ -107,18 +107,99 @@ $nav-border: 2px;
 
 .main {
     display: grid;
-    grid-template-columns: 280px 1px auto;
+    grid-template-columns: 360px 1px auto;
     margin: auto;
     width: $base-width;
     background-color: white;
 
     &__body {
-        padding: 40px 40px;
+        // padding: 40px 40px;
         // border: 1px solid #f0f0f0;
         border-radius: 20px;
         margin: $body-margin;
     }
 }
+
+.card-right {
+    border: 2px solid gray;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 20px;
+    @include flex-row-center();
+    justify-content: flex-end;
+    &__desc {
+        padding: 0px 30px;
+        margin: 0;
+        list-style-type: none;
+        @include flex-column-center();
+        align-items: flex-end;
+        min-height: 60px;
+        font-size: 32px;
+        flex-grow: 1;
+    }
+
+    &__img {
+        // opacity: 0.8;
+    }
+
+    $colors1: #FF9E9D, #FF3D7F, #9fc3ea, #3f51b5, #b3c773;
+    &__color {
+        @include flex-column-center();
+        flex-grow: 1;
+        max-width: 100px;
+        &--item1 {
+            display: flex;
+            // background-color: #3f51b5;
+            min-height: 60px;
+            min-width: 100px;
+            @for $i from 1 through 5 {
+                $color: nth($colors1, $i);
+                &:nth-child(#{$i}) {
+                    background-color: $color;
+                }
+            }
+        }
+    }
+}
+
+.card-left {
+    @include flex-row-center();
+    justify-content: flex-end;
+    &__desc {
+        padding: 0px 30px;
+        margin: 0;
+        list-style-type: none;
+        @include flex-column-center();
+        align-items: flex-start;
+        min-height: 60px;
+        font-size: 32px;
+        flex-grow: 1;
+    }
+
+    &__img {
+        // opacity: 0.8;
+    }
+
+    $colors2: #FF9E9D, #FF3D7F, #9fc3ea, #3f51b5, #b3c773;
+    &__color {
+        @include flex-column-center();
+        flex-grow: 1;
+        max-width: 100px;
+        &--item2 {
+            display: flex;
+            // background-color: #3f51b5;
+            min-height: 60px;
+            min-width: 100px;
+            @for $i from 1 through 5 {
+                $color: nth($colors2, $i);
+                &:nth-child(#{$i}) {
+                    background-color: $color;
+                }
+            }
+        }
+    }
+}
+
 
 .vertical-bar {
     width: 1px;
@@ -137,12 +218,12 @@ $nav-border: 2px;
     border: 1px solid #f0f0f0;
     border-radius: 20px;
     margin: $body-margin;
-    padding: 40px 20px;
+    padding: 40px 40px;
 
     &__profile {
         margin: 0px auto;
         overflow: hidden;
-        border-radius: 100%;
+        border-radius: 20px;
         &--img {
             max-width: 100%;
             height: auto;

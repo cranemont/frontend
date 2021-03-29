@@ -16,23 +16,18 @@ body {
   margin: 0px auto;
   width: 100%;
   height: 234px;
-  background-image: url("/src/img/background-top-side.jpg");
-  background-color: white;
+  background-image: url("../src/img/cloud.jpg");
   background-attachment: fixed;
   opacity: 0.8;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-}
-
-.header img {
-  opacity: 0.5;
-  background-attachment: fixed;
+  background-size: 1780px 234px;
 }
 
 .header__top {
   margin: 0px auto;
-  width: 1280px;
+  width: 1380px;
   height: 180px;
   font-size: 100px;
   line-height: 208px;
@@ -40,7 +35,7 @@ body {
 
 .header__nav-contaioner {
   margin: auto;
-  width: 1280px;
+  width: 1380px;
   height: 50px;
   background-color: rgba(255, 255, 255, 0);
   border: 2px solid #0000003f;
@@ -89,6 +84,7 @@ body {
 }
 
 .header__nav--item {
+  font-weight: bold;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -96,7 +92,7 @@ body {
 }
 
 .header__nav--item:nth-child(1) {
-  min-width: 280px;
+  min-width: 360px;
 }
 
 .header__nav--item:nth-child(2) {
@@ -118,17 +114,208 @@ body {
 .main {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 280px 1px auto;
-      grid-template-columns: 280px 1px auto;
+  -ms-grid-columns: 360px 1px auto;
+      grid-template-columns: 360px 1px auto;
   margin: auto;
-  width: 1280px;
+  width: 1380px;
   background-color: white;
 }
 
 .main__body {
-  padding: 40px 40px;
   border-radius: 20px;
-  margin: 16px;
+  margin: 32px;
+}
+
+.card-right {
+  border: 2px solid gray;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.card-right__desc {
+  padding: 0px 30px;
+  margin: 0;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  min-height: 60px;
+  font-size: 32px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.card-right__color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 100px;
+}
+
+.card-right__color--item1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 60px;
+  min-width: 100px;
+}
+
+.card-right__color--item1:nth-child(1) {
+  background-color: #FF9E9D;
+}
+
+.card-right__color--item1:nth-child(2) {
+  background-color: #FF3D7F;
+}
+
+.card-right__color--item1:nth-child(3) {
+  background-color: #9fc3ea;
+}
+
+.card-right__color--item1:nth-child(4) {
+  background-color: #3f51b5;
+}
+
+.card-right__color--item1:nth-child(5) {
+  background-color: #b3c773;
+}
+
+.card-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.card-left__desc {
+  padding: 0px 30px;
+  margin: 0;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  min-height: 60px;
+  font-size: 32px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.card-left__color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 100px;
+}
+
+.card-left__color--item2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 60px;
+  min-width: 100px;
+}
+
+.card-left__color--item2:nth-child(1) {
+  background-color: #FF9E9D;
+}
+
+.card-left__color--item2:nth-child(2) {
+  background-color: #FF3D7F;
+}
+
+.card-left__color--item2:nth-child(3) {
+  background-color: #9fc3ea;
+}
+
+.card-left__color--item2:nth-child(4) {
+  background-color: #3f51b5;
+}
+
+.card-left__color--item2:nth-child(5) {
+  background-color: #b3c773;
 }
 
 .vertical-bar {
@@ -136,7 +323,7 @@ body {
   height: 100%;
   background-color: #f0f0f0;
   background-clip: border-box;
-  margin: 16px 0px 0px;
+  margin: 32px 0px 0px;
 }
 
 .banner {
@@ -147,14 +334,14 @@ body {
   height: 454px;
   border: 1px solid #f0f0f0;
   border-radius: 20px;
-  margin: 16px;
-  padding: 40px 20px;
+  margin: 32px;
+  padding: 40px 40px;
 }
 
 .banner__profile {
   margin: 0px auto;
   overflow: hidden;
-  border-radius: 100%;
+  border-radius: 20px;
 }
 
 .banner__profile--img {

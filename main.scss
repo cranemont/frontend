@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+$base-width: 1280px;
+$max-width: 1920px;
+$header-height: 234px;
+$top-height: 180px;
+$body-margin: 16px;
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-row-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: $header-height minmax(344px, auto) minmax(400px, auto);
+    overflow: hidden;
+}
+
+
+$nav-border: 5px;
+.header {
+    margin: 0px auto;
+    width: 100%;
+    height: $header-height;
+    // width: $base-width;
+    background-color: green;
+    &__top {
+        margin: 0px auto;
+        width: $base-width;
+        height: $top-height;
+        background-color: aquamarine;
+    }
+    &__nav {
+        margin: 0px auto;
+        width: $base-width;
+        height: $header-height - $top-height - $nav-border*2;
+        background-color: aliceblue;
+        border: $nav-border solid #f0f0f0;
+        border-style: double hidden double;
+    }
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 280px 1px auto;
+    margin: auto;
+    width: $base-width;
+    background-color: white;
+
+    &__body {
+        padding: 40px 40px;
+        border: 1px solid #f0f0f0;
+        border-radius: 20px;
+        margin: $body-margin;
+    }
+}
+
+.card-right {
+    @include flex-row-center();
+    justify-content: flex-end;
+    &__desc {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        @include flex-column-center();
+        min-height: 60px;
+
+        flex-grow: 1;
+        &--code1 {
+        }
+    }
+
+    $colors1: #FF9E9D, #FF3D7F, #9fc3ea, #3f51b5, #b3c773;
+    &__color {
+        @include flex-column-center();
+        flex-grow: 1;
+        max-width: 100px;
+        &--item1 {
+            display: flex;
+            // background-color: #3f51b5;
+            min-height: 60px;
+            min-width: 100px;
+            @for $i from 1 through 5 {
+                $color: nth($colors1, $i);
+                &:nth-child(#{$i}) {
+                    background-color: $color;
+                }
+            }
+        }
+    }
+}
+
+.vertical-bar {
+    width: 1px;
+    height: 100%;
+    background-color: #f0f0f0;
+    // border: 1px solid black;
+    background-clip: border-box;
+    margin: $body-margin 0px 0px;
+}
+
+.banner {
+    display: grid;
+    grid-template-rows: 1fr 1.618fr;
+    
+    height: 454px;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    margin: $body-margin;
+    padding: 40px 20px;
+
+    &__profile {
+        margin: 0px auto;
+        overflow: hidden;
+        border-radius: 100%;
+        &--img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    &__category {
+        display: flex;
+        flex-direction: column;
+
+        &--links {
+            height: 20%;
+            padding: 16px 16px 0px;
+            @include flex-column-center();
+        }
+
+        &--desc {
+            padding: 0px 16px 16px;
+            flex-grow: 1;
+        }
+    }
+}
+
