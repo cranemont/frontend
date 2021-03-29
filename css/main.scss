@@ -17,6 +17,13 @@ $body-margin: 16px;
     justify-content: center;
 }
 
+@mixin flex-row-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .container {
     display: grid;
     grid-template-rows: $header-height minmax(344px, auto) minmax(400px, auto);
@@ -24,26 +31,77 @@ $body-margin: 16px;
 }
 
 
-$nav-border: 5px;
+$nav-border: 2px;
 .header {
     margin: 0px auto;
     width: 100%;
     height: $header-height;
+    // background-image: ;
     // width: $base-width;
-    background-color: green;
+    background-image: url('/src/img/background-top-side.jpg');
+    background-color: white;
+    background-attachment: fixed;
+    opacity: 0.8;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    // background-size: $base-width+400px $header-height;
+    
+
+    img {
+        opacity: 0.5;
+        background-attachment: fixed;
+    }
+
     &__top {
         margin: 0px auto;
         width: $base-width;
         height: $top-height;
-        background-color: aquamarine;
+        font-size: 100px;
+        line-height: 208px;
+        // background-color: aquamarine;
     }
-    &__nav {
-        margin: 0px auto;
+    &__nav-contaioner {
+        margin: auto;
         width: $base-width;
         height: $header-height - $top-height - $nav-border*2;
-        background-color: aliceblue;
-        border: $nav-border solid #f0f0f0;
-        border-style: double hidden double;
+        background-color: rgba(255, 255, 255, 0);
+        border: $nav-border solid #0000003f;
+        border-style: solid hidden solid;
+        @include flex-row-center();
+    }
+
+    &__nav {
+        flex-grow: 1;
+        
+        &--list {
+            padding: 0;
+            margin: 0;
+            height: 40px;
+            list-style-type: none;
+            border: 2px solid rgba(196, 196, 196, 0.438);
+            border-style: solid hidden solid;
+            @include flex-row-center();
+            // display: grid;
+            // grid-template-columns: 248px 300px ;
+
+        }
+
+        &--item{
+            
+            flex-grow: 1;
+            text-align: center;
+            &:nth-child(1){
+                min-width: 280px;
+            }
+            
+            @for $i from 2 to 6{
+                &:nth-child(#{$i}) {
+                    border-left: 2px solid #f0f0f0;
+                }
+            }
+            // float: left;
+        }
     }
 }
 
@@ -56,7 +114,7 @@ $nav-border: 5px;
 
     &__body {
         padding: 40px 40px;
-        border: 1px solid #f0f0f0;
+        // border: 1px solid #f0f0f0;
         border-radius: 20px;
         margin: $body-margin;
     }
@@ -89,6 +147,7 @@ $nav-border: 5px;
             max-width: 100%;
             height: auto;
             object-fit: cover;
+            opacity: 0.9;
         }
     }
 
